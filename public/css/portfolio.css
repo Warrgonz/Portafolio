@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------
+# General settings
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Merriweather+Sans:wght@700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+
+:root{
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.5;
+    font-size: 16px;
+    font-size: 'Poppins', sans-serif;
+}
+::before,::after{
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Aside
+--------------------------------------------------------------*/
+
+ul{
+  list-style: none;
+
+}
+
+
+article{
+    background-color: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    position: fixed;
+    left: 270px;
+    top:0;
+    right: 0;
+    opacity: 1;
+    z-index: 0;
+}
+
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    background-color: var(--bg-black-100);
+    border-right: 1px solid var(--bg-black-50);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    height: 100%;
+    z-index: 10;
+}
+
+.logo{
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    
+}
+aside .nav-toggler{
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background-color: var(--bg-black-100);
+}
+
+nav{
+    margin-top: 50px;
+}
+
+nav li{
+    margin-bottom: 20px;
+    display: block;
+}
+
+nav li a{
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--bg-black-900);
+    padding: 5px 15px;
+}
+
+nav li a.active{
+   /* color: var(--skin-color); */
+
+}
+

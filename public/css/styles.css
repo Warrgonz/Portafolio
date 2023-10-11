@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Merriweather+Sans:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow-y: hidden;
+}
+
+.img-construction img {
+    width: 15%;
+    padding: 2em;
+}
+
+.construction h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 80px;
+    color: #58c2e0;
+}
+
+.construction p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.count>div {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    margin: 2rem;
+    background-color: black;
+    color: white;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+    font-size: 5em;
+    color: #ec6b00;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+svg {
+    position: fixed;
+    bottom: 0;
+    left: -50%;
+    right: -50%;
+}
+
+#home {
+    clip-path: url(#cache);
+}
+
+#red {
+    fill: none;
+    opacity: 0.15;
+    stroke: #CE1B5F;
+    stroke-width: 12;
+    stroke-miterlimit: 10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 12;
+    stroke-miterlimit: 10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 6;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.15;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body{
+        overflow-y: visible;
+    }
+    .construction h1 {
+        font-size: 80px;
+    }
+
+    svg {
+        height: 100vh;
+    }
+
+    .img-construction {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        overflow-y: visible;
+    }
+
+    .construction h1 {
+        font-size: 80px;
+    }
+
+    svg {
+        height: 100vh;
+    }
+
+    .img-construction {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        overflow-y: visible;
+    }
+
+    .img-construction {
+        display: none;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        overflow-y: visible;
+    }
+
+    .construction h1 {
+        font-size: 27px;
+    }
+
+    svg {
+        height: 100vh;
+    }
+
+    .img-construction {
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+/*
+@media (min-width: 768px) and (max-width: 1024px) {
+    svg {
+        height: 100vh;
+    }
+
+    .construction h1 {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    svg {
+        height: 100vh;
+    }
+
+    .construction h1 {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    svg {
+        height: 100vh;
+    }
+
+    .construction h1 {
+        font-size: 1em;
+    }
+}
+*/
