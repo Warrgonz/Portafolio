@@ -1,109 +1,253 @@
-/*--------------------------------------------------------------
-# General settings
---------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Merriweather+Sans:wght@700&family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700;900&display=swap');
 
-
-:root{
-    --bg-black-900: #f2f2fc;
-    --bg-black-100: #fdf9ff;
-    --bg-black-50: #e8dfec;
-    --text-black-900: #302e4d;
-    --text-black-700: #504e70;
+:root {
+    --blue: #f3f3f3e8;
+    --white: #fff;
+    --green: #2ccf6d;
+    --primary: #ea6a00;
+    --secondary: #58c2e0;
+    --bg: #26a85a;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
+.bg-color, nav, footer {
+    background-color: var(--bg);
+}
+
+main {
+    background:
+        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+}
+
+body {
+    color: var(--blue);
+    font-family: 'Gabarito', sans-serif;
+
+}
+
+a {
     text-decoration: none;
-    box-sizing: border-box;
 }
 
-body{
-    line-height: 1.5;
-    font-size: 16px;
-    font-size: 'Poppins', sans-serif;
-}
-::before,::after{
-    box-sizing: border-box;
-}
-
-/*--------------------------------------------------------------
-# Aside
---------------------------------------------------------------*/
-
-ul{
-  list-style: none;
-
-}
-
-
-article{
-    background-color: var(--bg-black-900);
-    min-height: 100vh;
-    display: block;
-    position: fixed;
-    left: 270px;
-    top:0;
-    right: 0;
-    opacity: 1;
-    z-index: 0;
-}
-
-aside{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-    background-color: var(--bg-black-100);
-    border-right: 1px solid var(--bg-black-50);
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 30px;
-    height: 100%;
-    z-index: 10;
-}
-
-.logo{
-    position: absolute;
-    top: 50px;
-    font-size: 30px;
-    
-}
-aside .nav-toggler{
-    height: 40px;
-    width: 45px;
-    border: 1px solid var(--bg-black-50);
+.btn {
+    z-index: 1;
+    overflow: hidden;
+    background: transparent;
+    position: relative;
+    padding: 8px 50px;
+    border-radius: 30px;
     cursor: pointer;
-    position: fixed;
-    left: 300px;
-    top: 20px;
-    border-radius: 5px;
-    background-color: var(--bg-black-100);
+    font-size: 1em;
+    letter-spacing: 2px;
+    transition: 0.2s ease;
+    font-weight: bold;
+    margin: 5px 0px;
+
+    &.green {
+        border: 4px solid var(--green);
+        color: var(--blue);
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--green);
+            z-index: -1;
+            transition: 0.3s ease;
+        }
+
+        &:hover {
+            color: var(--white);
+            background: var(--green);
+            transition: 0.2s ease;
+
+            &:before {
+                width: 100%;
+            }
+        }
+    }
 }
 
-nav{
-    margin-top: 50px;
+/* =========== NAV ============ */
+.navbar {
+    padding: 1.5rem;
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav li{
-    margin-bottom: 20px;
-    display: block;
+    font-size: 20px;
+    margin: 15px;
 }
 
 nav li a{
-    font-size: 16px;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-black-50);
-    color: var(--bg-black-900);
-    padding: 5px 15px;
+    color: white !important;
+}
+/* =========== HERO ============ */
+
+.home h1 {
+    font-weight: 900;
+    font-size: 55px;
 }
 
-nav li a.active{
-   /* color: var(--skin-color); */
+.hero img {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.home span:nth-child(1) {
+    color: #ea6a00;
+}
+
+.home span:nth-child(2) {
+    color: #58c2e0;
+}
+
+.contact-icon {
+    justify-content: center;
+}
+
+.contact-icon a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--secondary), var(--primary));
+    border-radius: 50%;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 0;
+    z-index: 1;
+}
+
+.contact-icon a::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    transform: scale(.88);
+    z-index: -1;
+}
+
+/* =========== Services ============ */
+
+.icon i {
+    color: var(--green);
+    font-size: 60px;
+}
+
+
+/* =========== Medias ============ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-txt {
+        padding-top: 200px;
+    }
+
+    .contact-icon a {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-icon a::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-icon i {
+        font-size: 50px;
+    }
+
+    .hero img {
+        width: 70%;
+    }
+
+    .contact-icon {
+        flex-direction: row !important;
+        margin-top: 30px;
+    }
+
+    .hero-txt h2 {
+        margin-top: 200px;
+        font-size: 50px;
+    }
+
+    .hero-txt h1 {
+        font-size: 65px;
+    }
+
+    .hero-txt h3 {
+        font-size: 50px;
+    }
+
+    .btn-hero {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .btn-hero button {
+        font-size: 30px;
+    }
 
 }
 
+@media (min-width: 481px) and (max-width: 767px) {
+    .contact-icon {
+        flex-direction: row !important;
+        margin-top: 30px;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .hero img {
+        margin-top: 100px;
+    }
+
+    .contact-icon {
+        flex-direction: row !important;
+        margin-top: 30px;
+    }
+
+    .contact-icon a {
+        margin: 10px;
+    }
+
+    .hero-txt h2 {
+        font-size: 30px;
+    }
+
+    .hero-txt h1 {
+        font-size: 40px;
+    }
+
+    .hero-txt h3 {
+        font-size: 25px;
+    }
+
+    .btn-hero {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+
+}
